@@ -127,6 +127,7 @@ async function handleFormSubmit(e) {
     }
 
     let isSuccess = false;
+    let needsActivation = false;
 
     // 1. Try Netlify Forms (if hosted on Netlify)
     try {
@@ -161,19 +162,24 @@ async function handleFormSubmit(e) {
             })
         });
         const fsData = await fsRes.json();
-        if (fsRes.ok || fsData.success === 'true' || (fsData.message && fsData.message.includes('Activation'))) {
+        if (fsRes.ok && (fsData.success === 'true' || fsData.success === true)) {
             isSuccess = true;
+        } else if (fsData.message && fsData.message.includes('Activation')) {
+            needsActivation = true;
         }
     } catch (err) {
         // Handled below
     }
+
+    const mailtoUrl = `mailto:qazizain253@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+    const whatsappUrl = `https://wa.me/923172871059?text=${encodeURIComponent("Hi Zain, I sent a message from your portfolio: " + message)}`;
 
     if (isSuccess) {
         btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         btn.style.background = 'var(--secondary)';
         form.reset();
         if (statusDiv) {
-            statusDiv.innerHTML = `✅ Thank you, <strong>${name}</strong>! Your message was sent successfully. I will get back to you shortly!`;
+            statusDiv.innerHTML = `✅ Thank you, <strong>${name}</strong>! Your message was sent successfully to <strong>qazizain253@gmail.com</strong>. I will get back to you shortly!`;
             statusDiv.className = 'form-status success';
         }
         setTimeout(() => {
@@ -181,14 +187,29 @@ async function handleFormSubmit(e) {
             btn.style.background = '';
             btn.disabled = false;
         }, 6000);
+    } else if (needsActivation) {
+        btn.innerHTML = '<i class="fas fa-envelope-open-text"></i> Activation Required';
+        btn.style.background = '#f59e0b';
+        btn.disabled = false;
+        if (statusDiv) {
+            statusDiv.innerHTML = `
+                <div style="font-size:0.88rem; line-height:1.6; color:#92400e; background:#fef3c7; border:1px solid #fcd34d; padding:12px; border-radius:8px; margin-top:10px;">
+                    <strong><i class="fas fa-info-circle"></i> 1-Time Setup Required:</strong><br>
+                    FormSubmit has sent a confirmation link to <strong>qazizain253@gmail.com</strong>.<br>
+                    Please open your Gmail and click <em>"Activate Form"</em> to start receiving direct inbox emails.<br>
+                    <div style="margin-top:8px;">
+                        <a href="${mailtoUrl}" class="btn btn-outline" style="font-size:0.78rem; padding:5px 10px; margin-right:6px;"><i class="fas fa-envelope"></i> Send via Email App</a>
+                        <a href="${whatsappUrl}" target="_blank" class="btn btn-outline" style="font-size:0.78rem; padding:5px 10px; color:#25d366;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                    </div>
+                </div>
+            `;
+            statusDiv.className = 'form-status';
+        }
     } else {
         // Fallback direct link
         btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Direct Email';
         btn.style.background = 'var(--primary)';
         btn.disabled = false;
-        const mailtoUrl = `mailto:qazizain253@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
-        const whatsappUrl = `https://wa.me/923172871059?text=${encodeURIComponent("Hi Zain, I sent a message from your portfolio: " + message)}`;
-        
         if (statusDiv) {
             statusDiv.innerHTML = `
                 <div style="font-size:0.85rem; line-height:1.5;">
