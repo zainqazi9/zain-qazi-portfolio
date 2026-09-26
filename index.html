@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zain Qazi | Front-end Developer &amp; Python Learner</title>
+    <meta name="description" content="Portfolio of Zain Qazi â€” Front-end Developer specializing in HTML, CSS, Bootstrap, JavaScript, and jQuery. Currently learning Python.">
+    <meta property="og:title" content="Zain Qazi | Front-end Developer">
+    <meta property="og:description" content="Front-end Developer portfolio â€” responsive web interfaces, DOM manipulation, and UI development.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">ZQ</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#job-match" class="nav-link">Job Match</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="Zain Qazi - Resume.pdf" download="Zain_Qazi_Resume.pdf" class="nav-btn"><i class="fas fa-download"></i> Download Resume</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Zain Qazi</h1>
+                <p class="hero-title" id="typingText"></p>
+                <p class="hero-location"><i class="fas fa-map-marker-alt"></i> Hyderabad, Pakistan</p>
+                <p class="hero-tagline">Building clean, responsive web interfaces â€” one project at a time.</p>
+                <div class="hero-buttons">
+                    <a href="#job-match" class="btn btn-accent"><i class="fas fa-bullseye"></i> Check Job Match</a>
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-laptop-code"></i> View Projects</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="mailto:qazizain253@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/923172871059" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <svg viewBox="0 0 500 500" class="hero-svg" aria-hidden="true">
+                    <!-- Background circles -->
+                    <circle cx="250" cy="250" r="200" fill="none" stroke="var(--primary)" stroke-width="1" opacity="0.15"/>
+                    <circle cx="250" cy="250" r="160" fill="none" stroke="var(--secondary)" stroke-width="1" opacity="0.2"/>
+                    <circle cx="250" cy="250" r="120" fill="none" stroke="var(--accent)" stroke-width="1" opacity="0.15"/>
+                    <!-- Code brackets -->
+                    <text x="120" y="200" font-size="80" fill="var(--primary)" opacity="0.6" font-family="monospace">&lt;</text>
+                    <text x="330" y="200" font-size="80" fill="var(--secondary)" opacity="0.6" font-family="monospace">/&gt;</text>
+                    <!-- Center icon -->
+                    <rect x="190" y="200" width="120" height="90" rx="8" fill="var(--primary)" opacity="0.12"/>
+                    <rect x="200" y="215" width="60" height="6" rx="3" fill="var(--secondary)" opacity="0.6"/>
+                    <rect x="200" y="228" width="80" height="6" rx="3" fill="var(--accent)" opacity="0.5"/>
+                    <rect x="200" y="241" width="45" height="6" rx="3" fill="var(--secondary)" opacity="0.4"/>
+                    <rect x="200" y="254" width="70" height="6" rx="3" fill="var(--primary)" opacity="0.5"/>
+                    <rect x="200" y="267" width="55" height="6" rx="3" fill="var(--accent)" opacity="0.3"/>
+                    <!-- Floating dots -->
+                    <circle cx="150" cy="320" r="6" fill="var(--accent)" opacity="0.5"/>
+                    <circle cx="350" cy="150" r="8" fill="var(--secondary)" opacity="0.4"/>
+                    <circle cx="380" cy="330" r="5" fill="var(--primary)" opacity="0.5"/>
+                    <circle cx="130" cy="140" r="4" fill="var(--accent)" opacity="0.6"/>
+                    <!-- Curly braces -->
+                    <text x="160" y="400" font-size="50" fill="var(--primary)" opacity="0.3" font-family="monospace">{</text>
+                    <text x="300" y="400" font-size="50" fill="var(--primary)" opacity="0.3" font-family="monospace">}</text>
+                    <!-- Python snake hint -->
+                    <text x="220" y="390" font-size="14" fill="var(--accent)" opacity="0.5" font-family="monospace">py</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-visual reveal">
+                    <svg viewBox="0 0 400 400" class="about-svg" aria-hidden="true">
+                        <rect x="50" y="50" width="300" height="200" rx="12" fill="var(--primary)" opacity="0.08"/>
+                        <rect x="70" y="70" width="260" height="20" rx="4" fill="var(--primary)" opacity="0.12"/>
+                        <!-- Browser dots -->
+                        <circle cx="82" cy="80" r="4" fill="#ff5f56"/>
+                        <circle cx="96" cy="80" r="4" fill="#ffbd2e"/>
+                        <circle cx="110" cy="80" r="4" fill="#27c93f"/>
+                        <!-- Code lines -->
+                        <rect x="80" y="105" width="120" height="8" rx="4" fill="var(--secondary)" opacity="0.4"/>
+                        <rect x="90" y="122" width="180" height="8" rx="4" fill="var(--primary)" opacity="0.25"/>
+                        <rect x="90" y="139" width="140" height="8" rx="4" fill="var(--accent)" opacity="0.35"/>
+                        <rect x="90" y="156" width="200" height="8" rx="4" fill="var(--primary)" opacity="0.2"/>
+                        <rect x="90" y="173" width="100" height="8" rx="4" fill="var(--secondary)" opacity="0.3"/>
+                        <rect x="80" y="190" width="80" height="8" rx="4" fill="var(--primary)" opacity="0.25"/>
+                        <rect x="80" y="207" width="160" height="8" rx="4" fill="var(--accent)" opacity="0.2"/>
+                        <!-- Decorative elements -->
+                        <circle cx="320" cy="320" r="40" fill="var(--secondary)" opacity="0.08"/>
+                        <circle cx="80" cy="330" r="30" fill="var(--accent)" opacity="0.08"/>
+                        <rect x="150" y="290" width="100" height="60" rx="8" fill="var(--primary)" opacity="0.06"/>
+                    </svg>
+                </div>
+                <div class="about-content reveal">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-text">
+                        Motivated, self-driven frontend developer with hands-on experience building responsive web interfaces using HTML, CSS, Bootstrap, JavaScript, and jQuery. Completed multiple hands-on projects covering UI design, DOM manipulation, and basic application logic. Currently expanding skill set into Python programming including data structures, OOP, and scripting. Eager to contribute to a development team and grow through real-world experience.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number"><i class="fab fa-python"></i></span>
+                            <span class="stat-label">Currently Learning Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title center reveal">Skills &amp; Technologies</h2>
+            <p class="section-subtitle center reveal">Tools and technologies I work with</p>
+
+            <div class="skills-grid">
+                <!-- Frontend -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Frontend</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                        <span class="skill-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                        <span class="skill-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+                        <span class="skill-tag"><i class="fas fa-dollar-sign"></i> jQuery</span>
+                    </div>
+                </div>
+
+                <!-- Backend / Scripting -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header">
+                        <i class="fas fa-terminal"></i>
+                        <h3>Backend / Scripting</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag learning"><i class="fab fa-python"></i> Python <span class="badge">Learning</span></span>
+                        <span class="skill-tag learning"><i class="fas fa-flask"></i> Flask <span class="badge">In Progress</span></span>
+                    </div>
+                    <p class="skill-note">Data structures, OOP, scripting Â· Actively building Flask backend for adminZQ</p>
+                </div>
+
+                <!-- Core Concepts -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Core Concepts</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Responsive Web Design</span>
+                        <span class="skill-tag">DOM Manipulation</span>
+                        <span class="skill-tag">UI Development</span>
+                        <span class="skill-tag">OOP</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-card reveal">
+                    <div class="skill-card-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-laptop-code"></i> VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EDUCATION ==================== -->
+    <section class="section education" id="education">
+        <div class="container">
+            <h2 class="section-title center reveal">Education</h2>
+            <p class="section-subtitle center reveal">My academic background</p>
+
+            <div class="education-card reveal">
+                <div class="edu-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="edu-content">
+                    <div class="edu-header">
+                        <h3>Intermediate (Pre-Engineering)</h3>
+                        <span class="edu-date">Expected 2027</span>
+                    </div>
+                    <p class="edu-school"><i class="fas fa-university"></i> Govt. Degree Boys College Qasimabad, Hyderabad, Pakistan</p>
+                    <span class="edu-status">Currently Enrolled</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS & HONORS ==================== -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <h2 class="section-title center reveal">Honors &amp; Certifications</h2>
+            <p class="section-subtitle center reveal">Global recognitions and technical milestones</p>
+
+            <div class="cert-card reveal">
+                <div class="cert-preview-col">
+                    <a href="assets/nasa-certificate.jpg" target="_blank" rel="noopener" class="cert-img-link" title="Click to view full certificate">
+                        <img src="assets/nasa-certificate.jpg" alt="NASA International Space Apps Challenge Certificate" class="cert-img">
+                        <div class="cert-zoom-overlay">
+                            <i class="fas fa-search-plus"></i> View Full Resolution
+                        </div>
+                    </a>
+                </div>
+                <div class="cert-info-col">
+                    <div class="cert-badge-row">
+                        <span class="cert-global-badge"><i class="fas fa-rocket"></i> Global Space Challenge</span>
+                        <span class="cert-date"><i class="far fa-calendar-alt"></i> October 2025</span>
+                    </div>
+                    <h3 class="cert-title">Galactic Problem Solver</h3>
+                    <h4 class="cert-issuer">NASA International Space Apps Challenge</h4>
+                    <p class="cert-authority">
+                        Presented by <strong>Dr. Keith Gaddis</strong>, Program Scientist, NASA International Space Apps Challenge
+                    </p>
+                    <p class="cert-desc">
+                        Proudly awarded to <strong>Zain Ul Abdeen Qazi</strong> for outstanding participation and technical problem-solving efforts to address complex challenges facing life on Earth and space exploration.
+                    </p>
+                    <div class="cert-partners">
+                        <span class="partner-label">Global Partners:</span>
+                        <span class="partner-pill">NASA</span>
+                        <span class="partner-pill">ESA</span>
+                        <span class="partner-pill">JAXA</span>
+                        <span class="partner-pill">ISRO</span>
+                        <span class="partner-pill">CSA</span>
+                        <span class="partner-pill">CONAE</span>
+                        <span class="partner-pill">UK Space Agency</span>
+                    </div>
+                    <div class="cert-action">
+                        <a href="assets/nasa-certificate.jpg" target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fas fa-certificate"></i> View Official Certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <h2 class="section-title center reveal">Projects</h2>
+            <p class="section-subtitle center reveal">Hands-on work showcasing what I've built</p>
+
+            <div class="projects-grid">
+
+                <!-- Marco Web -->
+                <div class="project-card reveal">
+                    <div class="project-card-header has-img">
+                        <img src="assets/marco-starting.jpg" alt="Marco Web Starting Preview" class="card-img">
+                        <div class="header-overlay">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3>Marco Web</h3>
+                        <p>Structured static web page with clean layout and styling.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="demos/marco/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/zainqazi9/marco-web" target="_blank" rel="noopener" class="card-btn btn-code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Moision Doree Web -->
+                <div class="project-card reveal">
+                    <div class="project-card-header has-img">
+                        <img src="assets/maison-preview.jpg" alt="Moision Doree Web Preview" class="card-img" onerror="this.style.display='none'">
+                        <div class="header-overlay">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3>Moision Doree Web</h3>
+                        <p>Responsive website built with Bootstrap's grid system and UI components.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="demos/maison-doree/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/zainqazi9/moision-doree-web" target="_blank" rel="noopener" class="card-btn btn-code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- iOS Calculator -->
+                <div class="project-card reveal">
+                    <div class="project-card-header ios-calc-header" style="background: linear-gradient(135deg, #1c1c1e, #2c2c2e);">
+                        <div class="mini-calc-mockup">
+                            <span class="calc-badge-screen">1024</span>
+                            <div class="calc-badge-row">
+                                <span class="calc-dot gray">C</span>
+                                <span class="calc-dot gray">âŒ«</span>
+                                <span class="calc-dot orange">Ã·</span>
+                            </div>
+                        </div>
+                        <div class="header-overlay">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3>iOS Calculator</h3>
+                        <p>Browser-based calculator with iOS-style UI and JS arithmetic logic.</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="demos/ios-calculator/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/zainqazi9/ios-calculator" target="_blank" rel="noopener" class="card-btn btn-code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bank Management System -->
+                <div class="project-card reveal">
+                    <div class="project-card-header bank-header" style="background: linear-gradient(135deg, #0a2540, #0f4c75);">
+                        <div class="mini-terminal-mockup">
+                            <span class="terminal-line"><i class="fas fa-angle-right"></i> PIN Authenticated</span>
+                            <span class="terminal-line balance"><i class="fas fa-wallet"></i> Balance: 50,000 PKR</span>
+                        </div>
+                        <div class="header-overlay">
+                            <i class="fas fa-university"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3>Bank Management System</h3>
+                        <p>Console-based app handling deposits, withdrawals, and balance tracking.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="demos/bank-system/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/zainqazi9/bank-management-system" target="_blank" rel="noopener" class="card-btn btn-code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Panel (adminZQ) -->
+                <div class="project-card reveal">
+                    <div class="project-card-header has-img">
+                        <img src="assets/admin-preview.jpg" alt="adminZQ Restaurant Suite Preview" class="card-img" onerror="this.style.display='none'">
+                        <div class="header-overlay">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3>adminZQ â€” Restaurant Suite</h3>
+                        <p>Comprehensive restaurant management suite with sales analytics and order workflows. Backend integration in active development using Python (Flask).</p>
+                        <div class="project-tags">
+                            <span>Python (Flask)</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>Bootstrap 5</span>
+                            <span>JavaScript</span>
+                            <span>jQuery</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="demos/admin-panel/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/zainqazi9/admin-panel" target="_blank" rel="noopener" class="card-btn btn-code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== JOB MATCH (PROFILE MATCHER) ==================== -->
+    <section class="section job-match" id="job-match">
+        <div class="container">
+            <h2 class="section-title center reveal">Job Compatibility Matcher</h2>
+            <p class="section-subtitle center reveal">Paste any job description to evaluate real-time skill alignment and project recommendations</p>
+
+            <div class="job-match-wrapper reveal">
+                <div class="job-match-input-card">
+                    <div class="presets-header">
+                        <span><i class="fas fa-magic"></i> Quick Preset Tests:</span>
+                        <div class="presets-buttons">
+                            <button type="button" class="preset-btn" onclick="loadJobSample('frontend')">Junior Frontend Dev</button>
+                            <button type="button" class="preset-btn" onclick="loadJobSample('ui-web')">UI &amp; Responsive Web</button>
+                            <button type="button" class="preset-btn" onclick="loadJobSample('python-intern')">Python &amp; Web Intern</button>
+                        </div>
+                    </div>
+
+                    <div class="textarea-wrapper">
+                        <textarea id="jobDescriptionInput" rows="5" placeholder="Paste a job description or list of requirements here (e.g. Looking for a Frontend Developer with HTML5, CSS3, Bootstrap, JavaScript, jQuery, Python, OOP, responsive UI design)..."></textarea>
+                    </div>
+
+                    <div class="job-match-actions">
+                        <button type="button" class="btn btn-primary" id="analyzeJobBtn" onclick="analyzeJobMatch()">
+                            <i class="fas fa-bolt"></i> Analyze Compatibility Match
+                        </button>
+                        <button type="button" class="btn btn-outline" onclick="resetJobMatch()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+
+                <div class="job-match-result-card" id="matchResults" style="display: none;">
+                    <!-- Result dynamically generated by script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title center reveal">Get In Touch</h2>
+            <p class="section-subtitle center reveal">Have a role, project, or collaboration in mind? Let's connect.</p>
+
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+923172871059">+92 317 2871059</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:qazizain253@gmail.com">qazizain253@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener">Connect on LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/923172871059" target="_blank" rel="noopener">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Hyderabad, Pakistan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper reveal">
+                    <form class="contact-form" id="contactForm" onsubmit="return handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <div id="formStatus" class="form-status"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <a href="#home" class="footer-logo">ZQ</a>
+                <p>Front-end Developer | Python Learner</p>
+            </div>
+            <div class="footer-center">
+                <p>&copy; 2026 Zain Qazi. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="mailto:qazizain253@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/923172871059" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
