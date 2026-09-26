@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -297,7 +297,7 @@
                             <span>CSS</span>
                         </div>
                         <div class="project-actions">
-                            <a href="demos/marco/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                            <a href="https://zainqazi9.github.io/marco-web/" target="_blank" rel="noopener" class="card-btn btn-demo">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                             <a href="https://github.com/zainqazi9/marco-web" target="_blank" rel="noopener" class="card-btn btn-code">
@@ -324,7 +324,7 @@
                             <span>Bootstrap</span>
                         </div>
                         <div class="project-actions">
-                            <a href="demos/maison-doree/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                            <a href="https://zainqazi9.github.io/moision-doree-web/" target="_blank" rel="noopener" class="card-btn btn-demo">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                             <a href="https://github.com/zainqazi9/moision-doree-web" target="_blank" rel="noopener" class="card-btn btn-code">
@@ -341,8 +341,8 @@
                             <span class="calc-badge-screen">1024</span>
                             <div class="calc-badge-row">
                                 <span class="calc-dot gray">C</span>
-                                <span class="calc-dot gray">âŒ«</span>
-                                <span class="calc-dot orange">Ã·</span>
+                                <span class="calc-dot gray">⌫</span>
+                                <span class="calc-dot orange">÷</span>
                             </div>
                         </div>
                         <div class="header-overlay">
@@ -358,7 +358,7 @@
                             <span>JavaScript</span>
                         </div>
                         <div class="project-actions">
-                            <a href="demos/ios-calculator/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
+                            <a href="https://zainqazi9.github.io/ios-calculator/" target="_blank" rel="noopener" class="card-btn btn-demo">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                             <a href="https://github.com/zainqazi9/ios-calculator" target="_blank" rel="noopener" class="card-btn btn-code">
@@ -381,17 +381,17 @@
                     </div>
                     <div class="project-card-body">
                         <h3>Bank Management System</h3>
-                        <p>Console-based app handling deposits, withdrawals, and balance tracking.</p>
+                        <p>Interactive web simulation of banking transaction engine. Core backend implemented in Python (<code>Bank.py</code>) handling deposits, withdrawals, and balance tracking.</p>
                         <div class="project-tags">
-                            <span>JavaScript</span>
-                            <span>Python</span>
+                            <span>Python (Backend)</span>
+                            <span>JavaScript (Web Simulator)</span>
                         </div>
                         <div class="project-actions">
-                            <a href="demos/bank-system/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            <a href="https://zainqazi9.github.io/bank-management-system/" target="_blank" rel="noopener" class="card-btn btn-demo">
+                                <i class="fas fa-play"></i> Live Simulator
                             </a>
                             <a href="https://github.com/zainqazi9/bank-management-system" target="_blank" rel="noopener" class="card-btn btn-code">
-                                <i class="fab fa-github"></i> Code
+                                <i class="fab fa-github"></i> Python Source
                             </a>
                         </div>
                     </div>
@@ -406,10 +406,10 @@
                         </div>
                     </div>
                     <div class="project-card-body">
-                        <h3>adminZQ â€” Restaurant Suite</h3>
-                        <p>Comprehensive restaurant management suite with sales analytics and order workflows. Backend integration in active development using Python (Flask).</p>
+                        <h3>adminZQ — Restaurant Suite</h3>
+                        <p>Comprehensive restaurant management suite with sales analytics and order workflows. Backend architecture built with Python (Flask) with 18+ routes, and frontend styled in Bootstrap 5 & jQuery.</p>
                         <div class="project-tags">
-                            <span>Python (Flask)</span>
+                            <span>Python (Flask Backend)</span>
                             <span>HTML5</span>
                             <span>CSS3</span>
                             <span>Bootstrap 5</span>
@@ -417,11 +417,11 @@
                             <span>jQuery</span>
                         </div>
                         <div class="project-actions">
-                            <a href="demos/admin-panel/index.html" target="_blank" rel="noopener" class="card-btn btn-demo">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            <a href="https://zainqazi9.github.io/admin-panel/" target="_blank" rel="noopener" class="card-btn btn-demo">
+                                <i class="fas fa-desktop"></i> UI Live Demo
                             </a>
                             <a href="https://github.com/zainqazi9/admin-panel" target="_blank" rel="noopener" class="card-btn btn-code">
-                                <i class="fab fa-github"></i> Code
+                                <i class="fab fa-github"></i> Flask Backend Code
                             </a>
                         </div>
                     </div>
@@ -515,7 +515,9 @@
                 </div>
 
                 <div class="contact-form-wrapper reveal">
-                    <form class="contact-form" id="contactForm" onsubmit="return handleFormSubmit(event)">
+                    <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return handleFormSubmit(event)">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p style="display:none"><label>Don't fill this: <input name="bot-field"></label></p>
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your Name" required>

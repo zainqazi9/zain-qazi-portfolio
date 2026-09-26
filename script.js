@@ -107,13 +107,17 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealOnScroll.observe(el));
 });
 
-// ==================== CONTACT FORM HANDLER (Formspree) ====================
-function handleFormSubmit(e) {
+// ==================== CONTACT FORM HANDLER (Netlify + FormSubmit) ====================
+async function handleFormSubmit(e) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
     const originalHTML = btn.innerHTML;
     const statusDiv = document.getElementById('formStatus');
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
 
     btn.disabled = true;
     btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
@@ -122,45 +126,80 @@ function handleFormSubmit(e) {
         statusDiv.className = 'form-status';
     }
 
-    fetch('https://formspree.io/f/xpwzgejb', {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-        if (response.ok) {
-            btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
-            btn.style.background = 'var(--secondary)';
-            form.reset();
-            if (statusDiv) {
-                statusDiv.textContent = '✅ Your message was sent successfully! I\'ll get back to you shortly.';
-                statusDiv.className = 'form-status success';
-            }
-            setTimeout(() => {
-                btn.innerHTML = originalHTML;
-                btn.style.background = '';
-                btn.disabled = false;
-                if (statusDiv) { statusDiv.textContent = ''; statusDiv.className = 'form-status'; }
-            }, 5000);
-        } else {
-            return response.json().then(data => {
-                throw new Error(data.errors ? data.errors.map(e => e.message).join(', ') : 'Submission failed');
-            });
+    let isSuccess = false;
+
+    // 1. Try Netlify Forms (if hosted on Netlify)
+    try {
+        const netlifyData = new FormData(form);
+        const netlifyRes = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(netlifyData).toString()
+        });
+        if (netlifyRes.ok) {
+            isSuccess = true;
         }
-    })
-    .catch(err => {
-        btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed';
-        btn.style.background = '#e74c3c';
+    } catch (err) {
+        // Fallback to FormSubmit below
+    }
+
+    // 2. Try FormSubmit directly to qazizain253@gmail.com
+    try {
+        const fsRes = await fetch('https://formsubmit.co/ajax/qazizain253@gmail.com', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                message: message,
+                _subject: `New Portfolio Message from ${name}`,
+                _captcha: 'false',
+                _template: 'table'
+            })
+        });
+        const fsData = await fsRes.json();
+        if (fsRes.ok || fsData.success === 'true' || (fsData.message && fsData.message.includes('Activation'))) {
+            isSuccess = true;
+        }
+    } catch (err) {
+        // Handled below
+    }
+
+    if (isSuccess) {
+        btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        btn.style.background = 'var(--secondary)';
+        form.reset();
         if (statusDiv) {
-            statusDiv.textContent = '❌ Failed to send. Please email directly: qazizain253@gmail.com';
-            statusDiv.className = 'form-status error';
+            statusDiv.innerHTML = `✅ Thank you, <strong>${name}</strong>! Your message was sent successfully. I will get back to you shortly!`;
+            statusDiv.className = 'form-status success';
         }
         setTimeout(() => {
             btn.innerHTML = originalHTML;
             btn.style.background = '';
             btn.disabled = false;
-        }, 4000);
-    });
+        }, 6000);
+    } else {
+        // Fallback direct link
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Direct Email';
+        btn.style.background = 'var(--primary)';
+        btn.disabled = false;
+        const mailtoUrl = `mailto:qazizain253@gmail.com?subject=Portfolio%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message)}`;
+        const whatsappUrl = `https://wa.me/923172871059?text=${encodeURIComponent("Hi Zain, I sent a message from your portfolio: " + message)}`;
+        
+        if (statusDiv) {
+            statusDiv.innerHTML = `
+                <div style="font-size:0.85rem; line-height:1.5;">
+                    ⚠️ Direct delivery option: Click to send via 
+                    <a href="${mailtoUrl}" style="color:var(--secondary); font-weight:600; text-decoration:underline;">Email</a> or 
+                    <a href="${whatsappUrl}" target="_blank" style="color:#25d366; font-weight:600; text-decoration:underline;">WhatsApp</a>
+                </div>
+            `;
+            statusDiv.className = 'form-status error';
+        }
+    }
 
     return false;
 }
